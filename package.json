@@ -1,0 +1,29 @@
+{
+  "name": "myLib",
+  "version": "1.0.0",
+  "repository": "https://github.com/.../myLib.git",
+  "author": "...",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["demo-website"],
+  "source": "src/index.ts",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "parcel build",
+    "start:demo": "parcel ./demo/index.html --dist-dir dist-demo",
+    "build:demo": "parcel build ./demo/index.html --dist-dir dist-demo",
+    "compile": "rm -rf dist/ && tsc --outDir dist",
+    "compile-watch": "rm -rf dist/ && tsc -w --outDir dist",
+    "prepublish": "yarn compile"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@parcel/packager-ts": "^2.1.0",
+    "@parcel/transformer-typescript-types": "^2.1.0",
+    "parcel": "latest",
+    "typescript": ">=3.0.0"
+  }
+}
